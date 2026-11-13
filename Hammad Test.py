@@ -1,22 +1,26 @@
-import pygame, sys
+import pygame, sys, os
 from pygame.locals import *
 
 pygame.init()
+
+print(os.getcwd())
+print(os.path.exists("Images/Outside-110-112.jpg"))
 
 WINDOWWIDTH = 1250
 WINDOWHEIGHT = 750
 
 windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), 0, 32)
+print("TEST:", 'Images/Outside-110-112.jpg')
 pygame.display.set_caption('RCH Beginnings')
 
 #Pretty sure you guys dont have access to these images. Ill figure it out later
-Outside110112 = pygame.image.load('Outside-110-112.jpg')
+Outside110112 = pygame.image.load('Images/Outside-110-112.jpg')
 Outside110112 = pygame.transform.scale(Outside110112, (1250,750))
 
-Hallway110 = pygame.image.load('110Hallway.jpg')
+Hallway110 = pygame.image.load('Images/110Hallway.jpg')
 Hallway110 = pygame.transform.scale(Hallway110, (1250,750))
 
-Hallway112 = pygame.image.load('112Hallway.jpg')
+Hallway112 = pygame.image.load('Images/112Hallway.jpg')
 Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
 
 
