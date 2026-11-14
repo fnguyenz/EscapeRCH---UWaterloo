@@ -12,38 +12,38 @@ windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('RCH Beginnings')
 
 #Loading all Backgrounds
-InstructionsPage = pygame.image.load('InstructionsPage2.png')
+InstructionsPage = pygame.image.load('Images/InstructionsPage2.png')
 InstructionsPage = pygame.transform.scale(InstructionsPage, (1250,750))
 backbutton = pygame.Rect(0,0,200,100)
 
-VitelliClass = pygame.image.load('VitelliClass.jpg')
+VitelliClass = pygame.image.load('Images/VitelliClass.jpg')
 VitelliClass = pygame.transform.scale(VitelliClass, (1250,750))
 
-Outside103105 = pygame.image.load('Outside103105.jpg')
+Outside103105 = pygame.image.load('Images/Outside103105.jpg')
 Outside103105 = pygame.transform.scale(Outside103105, (1250,750))
 
-Hallway103 = pygame.image.load('103Hallway.jpg')
+Hallway103 = pygame.image.load('Images/103Hallway.jpg')
 Hallway103 = pygame.transform.scale(Hallway103, (1250,750))
 
-Hallway105 = pygame.image.load('105Hallway.jpg')
+Hallway105 = pygame.image.load('Images/105Hallway.jpg')
 Hallway105 = pygame.transform.scale(Hallway105, (1250,750))
 
-CentreRoom = pygame.image.load('CenterRoom.jpg')
+CentreRoom = pygame.image.load('Images/CenterRoom.jpg')
 CentreRoom = pygame.transform.scale(CentreRoom, (1250,750))
 
-Centre1012 = pygame.image.load('Centre1012.jpg')
+Centre1012 = pygame.image.load('Images/Centre1012.jpg')
 Centre1012 = pygame.transform.scale(Centre1012, (1250,750))
 
-Centre1315 = pygame.image.load('Centre1315.jpg')
+Centre1315 = pygame.image.load('Images/Centre1315.jpg')
 Centre1315 = pygame.transform.scale(Centre1315, (1250,750))
 
-Outside110112 = pygame.image.load('Outside-110-112.jpg')
+Outside110112 = pygame.image.load('Images/Outside-110-112.jpg')
 Outside110112 = pygame.transform.scale(Outside110112, (1250,750))
 
-Hallway110 = pygame.image.load('110Hallway.jpg')
+Hallway110 = pygame.image.load('Images/110Hallway.jpg')
 Hallway110 = pygame.transform.scale(Hallway110, (1250,750))
 
-Hallway112 = pygame.image.load('112Hallway.jpg')
+Hallway112 = pygame.image.load('Images/112Hallway.jpg')
 Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
 
 
@@ -53,16 +53,16 @@ Green_left = pygame.Rect(0,350,100,100)
 Green_down = pygame.Rect(575,650,100,100)
 Green_up = pygame.Rect(575,0,100,100)
 
-GreenRightPic = pygame.image.load('GreenRightPic.png')
+GreenRightPic = pygame.image.load('Images/GreenRightPic.png')
 GreenRightPic = pygame.transform.scale(GreenRightPic,(100,100))
 
-GreenLeftPic = pygame.image.load('GreenLeftPic.png')
+GreenLeftPic = pygame.image.load('Images/GreenLeftPic.png')
 GreenLeftPic = pygame.transform.scale(GreenLeftPic,(100,100))
 
-GreenDownPic = pygame.image.load('GreenDownPic.png')
+GreenDownPic = pygame.image.load('Images/GreenDownPic.png')
 GreenDownPic = pygame.transform.scale(GreenDownPic,(100,100))
 
-GreenUpPic = pygame.image.load('GreenUpPic.png')
+GreenUpPic = pygame.image.load('Images/GreenUpPic.png')
 GreenUpPic = pygame.transform.scale(GreenUpPic,(100,100))
 
 #Colours
