@@ -1,6 +1,6 @@
-import pygame, sys,
+import pygame, sys
 from pygame.locals import *
-from GameFunctions import *
+from GameFunctions import map_set
 
 pygame.init()
 clock = pygame.time.Clock()
