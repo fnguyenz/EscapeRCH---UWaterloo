@@ -364,10 +364,11 @@ while True:
         windowSurface.blit(Hallway112, (0,0))
         windowSurface.blit(GreenRightPic, Green_rightcentre)
     
-    windowSurface.blit(MapList[map], (0, 0))
-    MapText = basicFont.render(MapNames[map], True, WHITE)
-    MapTextRect = MapText.get_rect(topleft=(0,200))
-    windowSurface.blit(MapText, MapTextRect)
+    if map != None:
+        windowSurface.blit(MapList[map], (0, 0))
+        MapText = basicFont.render(MapNames[map], True, WHITE)
+        MapTextRect = MapText.get_rect(topleft=(0,200))
+        windowSurface.blit(MapText, MapTextRect)
 
     pygame.display.update()
     clock.tick(60)
