@@ -56,7 +56,7 @@ Hallway112 = pygame.image.load('Images/112Hallway.jpg')
 Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
 
 #Map Loading
-MapLength = 300
+MapLength = 250
 MapWidth = 200
 
 Outside103105Map = pygame.image.load('Images/maps/outside103and105map.png')             #0
