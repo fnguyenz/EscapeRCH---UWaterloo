@@ -56,7 +56,7 @@ Hallway112 = pygame.image.load('Images/112Hallway.jpg')
 Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
 
 #Map Loading
-MapLength = 200
+MapLength = 300
 MapWidth = 200
 
 Outside103105Map = pygame.image.load('Images/maps/outside103and105map.png')             #0
@@ -132,6 +132,7 @@ BLUE = (0, 0, 255)
 
 #General Fonts (Mainly just for title screen stuff right now)
 basicFont = pygame.font.SysFont(None, 48)
+MapFont = pygame.font.SysFont(None, 24)
 TitleFont = pygame.font.SysFont(None, 100)
 
 Title_text = TitleFont.render('Escape RCH', True, RED, BLACK)
@@ -366,8 +367,8 @@ while True:
     
     if map != None:
         windowSurface.blit(MapList[map], (0, 0))
-        MapText = basicFont.render(MapNames[map], True, WHITE)
-        MapTextRect = MapText.get_rect(topleft=(0,200))
+        MapText = MapFont.render(MapNames[map], True, WHITE)
+        MapTextRect = MapText.get_rect(topleft=(0,210))
         windowSurface.blit(MapText, MapTextRect)
 
     pygame.display.update()
