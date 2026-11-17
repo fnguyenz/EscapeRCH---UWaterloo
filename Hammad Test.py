@@ -365,6 +365,6 @@ while True:
         windowSurface.blit(Hallway112, (0,0))
         windowSurface.blit(GreenRightPic, Green_rightcentre)
     
-    map_set(map)
+    map_set(map,windowSurface,basicFont)
     pygame.display.update()
     clock.tick(60)
