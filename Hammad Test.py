@@ -3,6 +3,8 @@ from pygame.locals import *
 
 pygame.init()
 clock = pygame.time.Clock()
+#Run The code:
+#& "$HOME\anaconda3\envs\pygame_env\python.exe" ".\Hammad Test.py"
 
 #Creating the Window
 WINDOWWIDTH = 1250
