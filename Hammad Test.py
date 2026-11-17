@@ -56,12 +56,19 @@ Hallway112 = pygame.image.load('Images/112Hallway.jpg')
 Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
 
 
-#Primary buttons and Their Sprites
-Green_right = pygame.Rect(1150,350,100,100)
-Green_left = pygame.Rect(0,350,100,100)
+#Primary buttons
+Green_right = pygame.Rect(1150,200,100,100)
+Green_left = pygame.Rect(0,200,100,100)
 Green_down = pygame.Rect(575,650,100,100)
 Green_up = pygame.Rect(575,0,100,100)
 
+#Extra buttons
+Green_left2 = pygame.Rect(0,500,100,100)
+Green_leftcentre = pygame.Rect(0, 325,100,100)
+Green_right2 = pygame.Rect(1150,500,100,100)
+Green_rightcentre = pygame.Rect(1150, 325,100,100)
+
+#Arrow Sprites
 GreenRightPic = pygame.image.load('Images/GreenRightPic.png')
 GreenRightPic = pygame.transform.scale(GreenRightPic,(100,100))
 
@@ -133,39 +140,46 @@ while True:
                 elif Green_right.collidepoint(event.pos):
                     current_screen = '103Hallway'
                     
+                elif Green_left2.collidepoint(event.pos):
+                    current_screen = 'TiredKidClass'
+                
+            elif current_screen == 'TiredKidClass':
+                if Green_down.collidepoint(event.pos):
+                    current_screen = 'Outside103105'
+                    
             elif current_screen == '103Hallway':
-                if Green_left.collidepoint(event.pos):
+                if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Outside103105'
                     
             elif current_screen == '105Hallway':
-                if Green_right.collidepoint(event.pos):
+                if Green_rightcentre.collidepoint(event.pos):
                     current_screen = 'Outside103105'
             
             elif current_screen == 'CentreRoom':
-                if Green_left.collidepoint(event.pos):
+                if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Centre1315'
                     
-                elif Green_right.collidepoint(event.pos):
+                elif Green_rightcentre.collidepoint(event.pos):
                     current_screen = 'Centre1012'
                     
             elif current_screen == 'Centre1315':
                 if Green_up.collidepoint(event.pos):
                     current_screen = 'Outside103105'
                     
-                elif Green_left.collidepoint(event.pos):
+                elif Green_leftcentre.collidepoint(event.pos):
                     current_screen = '103Hallway'
                     
-                elif Green_right.collidepoint(event.pos):
+                elif Green_rightcentre.collidepoint(event.pos):
                     current_screen = '105Hallway'
                     
                 elif Green_down.collidepoint(event.pos):
                     current_screen = 'CentreRoom'
                 
             elif current_screen == 'Centre1012': 
-                if Green_left.collidepoint(event.pos): 
+                if Green_leftcentre.collidepoint(event.pos): 
                     current_screen = 'Hallway110' 
                     
-                elif Green_right.collidepoint(event.pos): 
+                elif Green_rightcentre.collidepoint(event.pos): 
                     current_screen = 'Hallway112' 
                     
                 elif Green_up.collidepoint(event.pos): 
@@ -184,12 +198,26 @@ while True:
                 elif Green_up.collidepoint(event.pos):
                     current_screen = 'CentreRoom'
                     
+                elif Green_right2.collidepoint(event.pos):
+                    current_screen = 'Classroom110'
+                
+                elif Green_left2.collidepoint(event.pos): 
+                    current_screen = 'Classroom112'
+                    
+            elif current_screen == 'Classroom110':
+                if Green_down.collidepoint(event.pos):
+                    current_screen = 'Outside110112'
+                  
+            elif current_screen == 'Classroom112':
+                if Green_down.collidepoint(event.pos):
+                    current_screen = 'Outside110112'
+                    
             elif current_screen == 'Hallway110':
-                if Green_left.collidepoint(event.pos):
+                if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Outside110112'
             
             elif current_screen == 'Hallway112':
-                if Green_right.collidepoint(event.pos):
+                if Green_rightcentre.collidepoint(event.pos):
                     current_screen = 'Outside110112'
             
     if current_screen == 'Start_Screen':
@@ -210,31 +238,36 @@ while True:
         windowSurface.blit(GreenLeftPic, Green_left)
         windowSurface.blit(GreenRightPic, Green_right)
         windowSurface.blit(GreenUpPic, Green_up)
+        windowSurface.blit(GreenLeftPic, Green_left2)
+        
+    elif current_screen == 'TiredKidClass':
+        windowSurface.blit(TiredKidClass, (0,0))
+        windowSurface.blit(GreenDownPic, Green_down)
         
     elif current_screen == '103Hallway':
         windowSurface.blit(Hallway103, (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
+        windowSurface.blit(GreenLeftPic, Green_leftcentre)
         
     elif current_screen == '105Hallway':
         windowSurface.blit(Hallway105, (0,0))
-        windowSurface.blit(GreenRightPic, Green_right)
+        windowSurface.blit(GreenRightPic, Green_rightcentre)
 
     elif current_screen == 'CentreRoom':
         windowSurface.blit(CentreRoom, (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
-        windowSurface.blit(GreenRightPic, Green_right)
+        windowSurface.blit(GreenLeftPic, Green_leftcentre)
+        windowSurface.blit(GreenRightPic, Green_rightcentre)
         
     elif current_screen == 'Centre1315':
         windowSurface.blit(Centre1315, (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
-        windowSurface.blit(GreenRightPic, Green_right)
+        windowSurface.blit(GreenLeftPic, Green_leftcentre)
+        windowSurface.blit(GreenRightPic, Green_rightcentre)
         windowSurface.blit(GreenUpPic, Green_up)
         windowSurface.blit(GreenDownPic, Green_down)
         
     elif current_screen == 'Centre1012':
         windowSurface.blit(Centre1012, (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
-        windowSurface.blit(GreenRightPic, Green_right)
+        windowSurface.blit(GreenLeftPic, Green_leftcentre)
+        windowSurface.blit(GreenRightPic, Green_rightcentre)
         windowSurface.blit(GreenUpPic, Green_up)
         windowSurface.blit(GreenDownPic, Green_down)
         
@@ -243,14 +276,24 @@ while True:
         windowSurface.blit(GreenLeftPic, Green_left)
         windowSurface.blit(GreenRightPic, Green_right)
         windowSurface.blit(GreenUpPic, Green_up)
+        windowSurface.blit(GreenLeftPic, Green_left2)
+        windowSurface.blit(GreenRightPic, Green_right2)
         
+    elif current_screen == 'Classroom110':
+        windowSurface.blit(Classroom110, (0,0))
+        windowSurface.blit(GreenDownPic, Green_down)
+        
+    elif current_screen == 'Classroom112':
+        windowSurface.blit(Classroom112, (0,0))
+        windowSurface.blit(GreenDownPic, Green_down)
+
     elif current_screen == 'Hallway110':
         windowSurface.blit(Hallway110, (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
+        windowSurface.blit(GreenLeftPic, Green_leftcentre)
         
     elif current_screen == 'Hallway112':
         windowSurface.blit(Hallway112, (0,0))
-        windowSurface.blit(GreenRightPic, Green_right)
+        windowSurface.blit(GreenRightPic, Green_rightcentre)
     
     
     pygame.display.update()
