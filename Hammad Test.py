@@ -22,6 +22,9 @@ VitelliClass = pygame.transform.scale(VitelliClass, (1250,750))
 Outside103105 = pygame.image.load('Images/Outside103105.jpg')
 Outside103105 = pygame.transform.scale(Outside103105, (1250,750))
 
+TiredKidClass = pygame.image.load('TiredKidClass.jpg')
+TiredKidClass = pygame.transform.scale(TiredKidClass, (1250,750))
+
 Hallway103 = pygame.image.load('Images/103Hallway.jpg')
 Hallway103 = pygame.transform.scale(Hallway103, (1250,750))
 
@@ -39,6 +42,12 @@ Centre1315 = pygame.transform.scale(Centre1315, (1250,750))
 
 Outside110112 = pygame.image.load('Images/Outside-110-112.jpg')
 Outside110112 = pygame.transform.scale(Outside110112, (1250,750))
+
+Classroom110 = pygame.image.load('Images/Classroom110.jpg')
+Classroom110 = pygame.transform.scale(Classroom110, (1250,750))
+
+Classroom112 = pygame.image.load('Images/Classroom112.jpg')
+Classroom112 = pygame.transform.scale(Classroom112, (1250,750))
 
 Hallway110 = pygame.image.load('Images/110Hallway.jpg')
 Hallway110 = pygame.transform.scale(Hallway110, (1250,750))
