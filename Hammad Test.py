@@ -1,6 +1,5 @@
 import pygame, sys
 from pygame.locals import *
-from GameFunctions import map_set
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -365,6 +364,10 @@ while True:
         windowSurface.blit(Hallway112, (0,0))
         windowSurface.blit(GreenRightPic, Green_rightcentre)
     
-    map_set(map,windowSurface,basicFont)
+    windowSurface.blit(MapList[map], (0, 0))
+    MapText = basicFont.render(MapNames[map], True, WHITE)
+    MapTextRect = MapText.get_rect(topleft=(0,200))
+    windowSurface.blit(MapText, MapTextRect)
+
     pygame.display.update()
     clock.tick(60)
