@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys, mapfunction
 from pygame.locals import *
 
 pygame.init()
@@ -55,6 +55,48 @@ Hallway110 = pygame.transform.scale(Hallway110, (1250,750))
 Hallway112 = pygame.image.load('Images/112Hallway.jpg')
 Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
 
+#Map Loading
+MapLength = 200
+MapWidth = 200
+
+Outside103105Map = pygame.image.load('Images/maps/outside103and105map.png')             #0
+Outside103105Map = pygame.transform.scale(Outside103105Map, (MapLength,MapWidth))  
+
+TiredKidClassMap = pygame.image.load('Images/maps/105map.png')                          #1
+TiredKidClassMap = pygame.transform.scale(TiredKidClassMap, (MapLength,MapWidth))
+
+Hallway103Map = pygame.image.load('Images/maps/103hallwaymap.png')                      #2
+Hallway103Map = pygame.transform.scale(Hallway103Map, (MapLength,MapWidth))
+
+Hallway105Map = pygame.image.load('Images/maps/105hallwaymap.png')                      #3
+Hallway105Map = pygame.transform.scale(Hallway105Map, (MapLength,MapWidth))
+
+centremap = pygame.image.load('Images/maps/centremap.png')                               #4
+centremap = pygame.transform.scale(centremap, (MapLength,MapWidth))
+
+centremapdown = pygame.image.load('Images/maps/centredownmap.png')                       #5
+centremapdown = pygame.transform.scale(centremapdown, (MapLength,MapWidth))
+
+centremapup = pygame.image.load('Images/maps/centreupmap.png')                           #6
+centremapup = pygame.transform.scale(centremapup, (MapLength,MapWidth))
+
+classroom110map = pygame.image.load('Images/maps/110map.png')                          #7
+classroom110map = pygame.transform.scale(classroom110map, (MapLength,MapWidth))
+
+classrooom112map = pygame.image.load('Images/maps/112map.png')                          #8
+classrooom112map = pygame.transform.scale(classrooom112map, (MapLength,MapWidth))
+
+outside110112map = pygame.image.load('Images/maps/outside110and112map.png')            #9
+outside110112map = pygame.transform.scale(outside110112map, (MapLength,MapWidth))
+
+Hallway110map = pygame.image.load('Images/maps/110hallwaymap.png')                     #10
+Hallway110map = pygame.transform.scale(Hallway110map, (MapLength,MapWidth))
+
+hallway112map = pygame.image.load('Images/maps/112hallwaymap.png')                     #11
+hallway112map = pygame.transform.scale(hallway112map, (MapLength,MapWidth))
+
+MapList = [Outside103105Map, TiredKidClassMap, Hallway103Map, Hallway105Map, centremap, centremapdown, centremapup, classroom110map, classrooom112map, outside110112map, Hallway110map, hallway112map]
+MapNames= ['Outside 103and 105', 'Classroom 105', 'Hallway 103', 'Hallway 105', 'Centre', 'Centre, 103 and 105', 'Centre, 110 and 112', 'Classroom 110', 'Classrooom 112', 'Outside 110 and 112', 'Hallway 110', 'Hallway 112']
 
 #Primary buttons
 Green_right = pygame.Rect(1150,200,100,100)
@@ -102,7 +144,7 @@ Instruction_text = basicFont.render('How to Play', True, WHITE, BLACK)
 Instruction_rect = Instruction_text.get_rect(center = (625, 450))
 
 current_screen = 'Start_Screen'
-
+map = None
 
 while True:
     for event in pygame.event.get():
@@ -129,96 +171,123 @@ while True:
             elif current_screen == 'VitelliClass':
                 if Green_down.collidepoint(event.pos):
                     current_screen = 'Outside103105'
+                    map = 0
             
             elif current_screen == 'Outside103105':
                 if Green_up.collidepoint(event.pos):
                     current_screen = 'CentreRoom'
-                    
+                    map = 4
+
                 elif Green_left.collidepoint(event.pos):
                     current_screen = '105Hallway'
-                    
+                    map = 3
+
                 elif Green_right.collidepoint(event.pos):
                     current_screen = '103Hallway'
-                    
+                    map = 2
+
                 elif Green_left2.collidepoint(event.pos):
                     current_screen = 'TiredKidClass'
+                    map = 1
                 
             elif current_screen == 'TiredKidClass':
                 if Green_down.collidepoint(event.pos):
                     current_screen = 'Outside103105'
-                    
+                    map = 0
+
             elif current_screen == '103Hallway':
                 if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Outside103105'
-                    
+                    map = 0
+
             elif current_screen == '105Hallway':
                 if Green_rightcentre.collidepoint(event.pos):
                     current_screen = 'Outside103105'
+                    map = 0
             
             elif current_screen == 'CentreRoom':
                 if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Centre1315'
+                    map = 5
                     
                 elif Green_rightcentre.collidepoint(event.pos):
                     current_screen = 'Centre1012'
-                    
+                    map = 6
+
             elif current_screen == 'Centre1315':
                 if Green_up.collidepoint(event.pos):
                     current_screen = 'Outside103105'
+                    map = 0
                     
                 elif Green_leftcentre.collidepoint(event.pos):
                     current_screen = '103Hallway'
-                    
+                    map = 2
+
                 elif Green_rightcentre.collidepoint(event.pos):
                     current_screen = '105Hallway'
-                    
+                    map = 3
+
                 elif Green_down.collidepoint(event.pos):
                     current_screen = 'CentreRoom'
+                    map = 4
                 
             elif current_screen == 'Centre1012': 
                 if Green_leftcentre.collidepoint(event.pos): 
                     current_screen = 'Hallway110' 
+                    map = 10
                     
                 elif Green_rightcentre.collidepoint(event.pos): 
                     current_screen = 'Hallway112' 
-                    
+                    map = 11
+
                 elif Green_up.collidepoint(event.pos): 
                     current_screen = 'Outside110112' 
+                    map = 9
                     
                 elif Green_down.collidepoint(event.pos): 
                     current_screen = 'CentreRoom'
+                    map = 4
                     
             elif current_screen == 'Outside110112':
                 if Green_right.collidepoint(event.pos):
                     current_screen = 'Hallway110'
+                    map = 10
                 
                 elif Green_left.collidepoint(event.pos): 
                     current_screen = 'Hallway112'
+                    map = 11
                     
                 elif Green_up.collidepoint(event.pos):
                     current_screen = 'CentreRoom'
+                    map = 4
                     
                 elif Green_right2.collidepoint(event.pos):
                     current_screen = 'Classroom110'
+                    map = 7
                 
                 elif Green_left2.collidepoint(event.pos): 
                     current_screen = 'Classroom112'
-                    
+                    map = 8
+
             elif current_screen == 'Classroom110':
                 if Green_down.collidepoint(event.pos):
                     current_screen = 'Outside110112'
+                    map = 9
                   
             elif current_screen == 'Classroom112':
                 if Green_down.collidepoint(event.pos):
                     current_screen = 'Outside110112'
-                    
+                    map = 9
+
             elif current_screen == 'Hallway110':
                 if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Outside110112'
+                    map = 9
             
             elif current_screen == 'Hallway112':
                 if Green_rightcentre.collidepoint(event.pos):
                     current_screen = 'Outside110112'
+                    map = 9
             
     if current_screen == 'Start_Screen':
         windowSurface.fill(BLACK)
@@ -295,6 +364,6 @@ while True:
         windowSurface.blit(Hallway112, (0,0))
         windowSurface.blit(GreenRightPic, Green_rightcentre)
     
-    
+    map_set(map)
     pygame.display.update()
     clock.tick(60)
