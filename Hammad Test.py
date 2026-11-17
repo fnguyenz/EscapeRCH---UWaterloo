@@ -77,7 +77,7 @@ centremap = pygame.transform.scale(centremap, (MapLength,MapWidth))
 centremapdown = pygame.image.load('Images/maps/centredownmap.png')                       #5
 centremapdown = pygame.transform.scale(centremapdown, (MapLength,MapWidth))
 
-centremapup = pygame.image.load('Images/maps/centreupmap.png')                           #6
+centremapup = pygame.image.load('Images/maps/centreupnmap.png')                           #6
 centremapup = pygame.transform.scale(centremapup, (MapLength,MapWidth))
 
 classroom110map = pygame.image.load('Images/maps/110map.png')                          #7
