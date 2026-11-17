@@ -4,3 +4,10 @@ dependencies:
   - pip
   - pip:
       - pygame==2.6.1
+
+# To create a virtual environment using this `environment.yml` file, you can use the following command in your terminal:
+#in conda cd to the directory where the `environment.yml` file is located and run:
+# conda env create -f environment.yml
+#run the following command to activate the environment:
+# conda activate pygame_env
+#run the code with: python your_script.py
