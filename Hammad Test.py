@@ -1,5 +1,6 @@
 import pygame, sys
 from pygame.locals import *
+from Loading import *
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -8,95 +9,9 @@ clock = pygame.time.Clock()
 WINDOWWIDTH = 1250
 WINDOWHEIGHT = 750
 
-windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), 0, 32)
-pygame.display.set_caption('RCH Beginnings')
+windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), pygame.RESIZABLE)
+pygame.display.set_caption('Local Test9')
 
-#Loading all Backgrounds
-InstructionsPage = pygame.image.load('Images/InstructionsPage2.png')
-InstructionsPage = pygame.transform.scale(InstructionsPage, (1250,750))
-backbutton = pygame.Rect(0,0,200,100)
-
-VitelliClass = pygame.image.load('Images/VitelliClass.jpg')
-VitelliClass = pygame.transform.scale(VitelliClass, (1250,750))
-
-Outside103105 = pygame.image.load('Images/Outside103105.jpg')
-Outside103105 = pygame.transform.scale(Outside103105, (1250,750))
-
-TiredKidClass = pygame.image.load('Images/TiredKidClass.jpg')
-TiredKidClass = pygame.transform.scale(TiredKidClass, (1250,750))
-
-Hallway103 = pygame.image.load('Images/103Hallway.jpg')
-Hallway103 = pygame.transform.scale(Hallway103, (1250,750))
-
-Hallway105 = pygame.image.load('Images/105Hallway.jpg')
-Hallway105 = pygame.transform.scale(Hallway105, (1250,750))
-
-CentreRoom = pygame.image.load('Images/CenterRoom.jpg')
-CentreRoom = pygame.transform.scale(CentreRoom, (1250,750))
-
-Centre1012 = pygame.image.load('Images/Centre1012.jpg')
-Centre1012 = pygame.transform.scale(Centre1012, (1250,750))
-
-Centre1315 = pygame.image.load('Images/Centre1315.jpg')
-Centre1315 = pygame.transform.scale(Centre1315, (1250,750))
-
-Outside110112 = pygame.image.load('Images/Outside-110-112.jpg')
-Outside110112 = pygame.transform.scale(Outside110112, (1250,750))
-
-Classroom110 = pygame.image.load('Images/Classroom110.jpg')
-Classroom110 = pygame.transform.scale(Classroom110, (1250,750))
-
-Classroom112 = pygame.image.load('Images/Classroom112.jpg')
-Classroom112 = pygame.transform.scale(Classroom112, (1250,750))
-
-Hallway110 = pygame.image.load('Images/110Hallway.jpg')
-Hallway110 = pygame.transform.scale(Hallway110, (1250,750))
-
-Hallway112 = pygame.image.load('Images/112Hallway.jpg')
-Hallway112 = pygame.transform.scale(Hallway112, (1250,750))
-
-#Map Loading
-MapLength = 250
-MapWidth = 200
-
-Outside103105Map = pygame.image.load('Images/maps/outside103and105map.png')             #0
-Outside103105Map = pygame.transform.scale(Outside103105Map, (MapLength,MapWidth))  
-
-TiredKidClassMap = pygame.image.load('Images/maps/105map.png')                          #1
-TiredKidClassMap = pygame.transform.scale(TiredKidClassMap, (MapLength,MapWidth))
-
-Hallway103Map = pygame.image.load('Images/maps/103hallwaymap.png')                      #2
-Hallway103Map = pygame.transform.scale(Hallway103Map, (MapLength,MapWidth))
-
-Hallway105Map = pygame.image.load('Images/maps/105hallwaymap.png')                      #3
-Hallway105Map = pygame.transform.scale(Hallway105Map, (MapLength,MapWidth))
-
-centremap = pygame.image.load('Images/maps/centremap.png')                               #4
-centremap = pygame.transform.scale(centremap, (MapLength,MapWidth))
-
-centremapdown = pygame.image.load('Images/maps/centredownmap.png')                       #5
-centremapdown = pygame.transform.scale(centremapdown, (MapLength,MapWidth))
-
-centremapup = pygame.image.load('Images/maps/centreupnmap.png')                           #6
-centremapup = pygame.transform.scale(centremapup, (MapLength,MapWidth))
-
-classroom110map = pygame.image.load('Images/maps/110map.png')                          #7
-classroom110map = pygame.transform.scale(classroom110map, (MapLength,MapWidth))
-
-classrooom112map = pygame.image.load('Images/maps/112map.png')                          #8
-classrooom112map = pygame.transform.scale(classrooom112map, (MapLength,MapWidth))
-
-outside110112map = pygame.image.load('Images/maps/outside110and112map.png')            #9
-outside110112map = pygame.transform.scale(outside110112map, (MapLength,MapWidth))
-
-Hallway110map = pygame.image.load('Images/maps/110hallwaymap.png')                     #10
-Hallway110map = pygame.transform.scale(Hallway110map, (MapLength,MapWidth))
-
-hallway112map = pygame.image.load('Images/maps/112hallwaymap.png')                     #11
-hallway112map = pygame.transform.scale(hallway112map, (MapLength,MapWidth))
-
-MapList = [Outside103105Map, TiredKidClassMap, Hallway103Map, Hallway105Map, centremap, centremapdown, centremapup, classroom110map, classrooom112map, outside110112map, Hallway110map, hallway112map]
-MapNames= ['Outside 103and 105', 'Classroom 105', 'Hallway 103', 'Hallway 105', 'Centre', 'Centre, 103 and 105', 'Centre, 110 and 112', 'Classroom 110', 'Classrooom 112', 'Outside 110 and 112', 'Hallway 110', 'Hallway 112']
 
 #Primary buttons
 Green_right = pygame.Rect(1150,200,100,100)
@@ -111,17 +26,7 @@ Green_right2 = pygame.Rect(1150,500,100,100)
 Green_rightcentre = pygame.Rect(1150, 325,100,100)
 
 #Arrow Sprites
-GreenRightPic = pygame.image.load('Images/GreenRightPic.png')
-GreenRightPic = pygame.transform.scale(GreenRightPic,(100,100))
 
-GreenLeftPic = pygame.image.load('Images/GreenLeftPic.png')
-GreenLeftPic = pygame.transform.scale(GreenLeftPic,(100,100))
-
-GreenDownPic = pygame.image.load('Images/GreenDownPic.png')
-GreenDownPic = pygame.transform.scale(GreenDownPic,(100,100))
-
-GreenUpPic = pygame.image.load('Images/GreenUpPic.png')
-GreenUpPic = pygame.transform.scale(GreenUpPic,(100,100))
 
 #Colours
 BLACK = (0, 0, 0)
@@ -156,6 +61,22 @@ while True:
             if event.key == K_ESCAPE:
                 pygame.quit()
                 sys.exit()
+        if event.type == pygame.VIDEORESIZE:
+            windowSurface = pygame.display.set_mode(event.size, pygame.RESIZABLE)
+            WINDOWWIDTH, WINDOWHEIGHT = event.size
+
+            for name in BackgroundList:
+                BackgroundList[name] = pygame.transform.scale(OriginalBackgroundList[name], event.size)
+
+            for screen in MapListOriginal:
+                MapList[screen] = pygame.transform.scale(MapListOriginal[screen], (WINDOWWIDTH/5, WINDOWHEIGHT/3.75))
+            MapFont = pygame.font.SysFont(None, int(WINDOWHEIGHT/31.25))
+
+            for arrow in range(len(ArrowsOriginal)):
+                Arrows[arrow] = pygame.transform.scale(ArrowsOriginal[arrow], (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5)))
+
+
+
         if event.type == MOUSEBUTTONUP:
             
             if current_screen == 'Start_Screen':
@@ -297,52 +218,52 @@ while True:
         windowSurface.blit(Instruction_text, Instruction_rect)
         
     elif current_screen == 'InstructionsPage':
-        windowSurface.blit(InstructionsPage, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
     
     elif current_screen == 'VitelliClass':
-        windowSurface.blit(VitelliClass, (0,0))
-        windowSurface.blit(GreenDownPic, Green_down)
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+        windowSurface.blit(Arrows[2], Green_down)
     
     elif current_screen == 'Outside103105':
-        windowSurface.blit(Outside103105, (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
-        windowSurface.blit(GreenRightPic, Green_right)
-        windowSurface.blit(GreenUpPic, Green_up)
-        windowSurface.blit(GreenLeftPic, Green_left2)
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+        windowSurface.blit(Arrows[1], Green_left)
+        windowSurface.blit(Arrows[0], Green_right)
+        windowSurface.blit(Arrows[3], Green_up)
+        windowSurface.blit(Arrows[1], Green_left2)
         
     elif current_screen == 'TiredKidClass':
-        windowSurface.blit(TiredKidClass, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenDownPic, Green_down)
         
     elif current_screen == '103Hallway':
-        windowSurface.blit(Hallway103, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenLeftPic, Green_leftcentre)
         
     elif current_screen == '105Hallway':
-        windowSurface.blit(Hallway105, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenRightPic, Green_rightcentre)
 
     elif current_screen == 'CentreRoom':
-        windowSurface.blit(CentreRoom, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenLeftPic, Green_leftcentre)
         windowSurface.blit(GreenRightPic, Green_rightcentre)
         
     elif current_screen == 'Centre1315':
-        windowSurface.blit(Centre1315, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenLeftPic, Green_leftcentre)
         windowSurface.blit(GreenRightPic, Green_rightcentre)
         windowSurface.blit(GreenUpPic, Green_up)
         windowSurface.blit(GreenDownPic, Green_down)
         
     elif current_screen == 'Centre1012':
-        windowSurface.blit(Centre1012, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenLeftPic, Green_leftcentre)
         windowSurface.blit(GreenRightPic, Green_rightcentre)
         windowSurface.blit(GreenUpPic, Green_up)
         windowSurface.blit(GreenDownPic, Green_down)
         
     elif current_screen == 'Outside110112':
-        windowSurface.blit(Outside110112, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenLeftPic, Green_left)
         windowSurface.blit(GreenRightPic, Green_right)
         windowSurface.blit(GreenUpPic, Green_up)
@@ -350,25 +271,25 @@ while True:
         windowSurface.blit(GreenRightPic, Green_right2)
         
     elif current_screen == 'Classroom110':
-        windowSurface.blit(Classroom110, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenDownPic, Green_down)
         
     elif current_screen == 'Classroom112':
-        windowSurface.blit(Classroom112, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenDownPic, Green_down)
 
     elif current_screen == 'Hallway110':
-        windowSurface.blit(Hallway110, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenLeftPic, Green_leftcentre)
         
     elif current_screen == 'Hallway112':
-        windowSurface.blit(Hallway112, (0,0))
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(GreenRightPic, Green_rightcentre)
     
-    if map != None:
-        windowSurface.blit(MapList[map], (0, 0))
+    if current_screen != 'Start_Screen' and current_screen != 'InstructionsPage' and current_screen != 'VitelliClass':
+        windowSurface.blit(MapList[current_screen], (0, 0))
         MapText = MapFont.render(MapNames[map], True, WHITE)
-        MapTextRect = MapText.get_rect(topleft=(0,210))
+        MapTextRect = MapText.get_rect(topleft=(0,(WINDOWHEIGHT/3.75)+10))
         windowSurface.blit(MapText, MapTextRect)
 
     pygame.display.update()
