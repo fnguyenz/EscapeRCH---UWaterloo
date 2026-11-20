@@ -10,7 +10,7 @@ WINDOWWIDTH = 1250
 WINDOWHEIGHT = 750
 
 windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), pygame.RESIZABLE)
-pygame.display.set_caption('Local Test10')
+pygame.display.set_caption('Escape RCH')
 
 
 #Primary buttons
@@ -39,13 +39,13 @@ MapFont = pygame.font.SysFont(None, 24)
 TitleFont = pygame.font.SysFont(None, 100)
 
 Title_text = TitleFont.render('Escape RCH', True, RED, BLACK)
-Title_rect = Title_text.get_rect(center=(625,150))
-
+Title_rect = Title_text.get_rect(center=(WINDOWWIDTH/2,WINDOWHEIGHT/5))
+print(Title_rect.center)
 play_text = basicFont.render('Play', True, WHITE, BLACK) #creates text object
-play_textRect = play_text.get_rect(center=(625,375))
+play_textRect = play_text.get_rect(center=(WINDOWWIDTH/2,WINDOWHEIGHT/2))
 
 Instruction_text = basicFont.render('How to Play', True, WHITE, BLACK)
-Instruction_rect = Instruction_text.get_rect(center = (625, 450))
+Instruction_rect = Instruction_text.get_rect(center = (WINDOWWIDTH/2, (WINDOWHEIGHT/(5/3))))
 
 current_screen = 'Start_Screen'
 map = None
@@ -62,6 +62,17 @@ while True:
         if event.type == pygame.VIDEORESIZE:
             windowSurface = pygame.display.set_mode(event.size, pygame.RESIZABLE)
             WINDOWWIDTH, WINDOWHEIGHT = event.size
+
+            basicFont = pygame.font.SysFont(None, int(WINDOWHEIGHT/15.625))
+            TitleFont = pygame.font.SysFont(None, int(WINDOWHEIGHT/7.5))
+
+            Title_text = TitleFont.render('Escape RCH', True, RED, BLACK)
+            play_text = basicFont.render('Play', True, WHITE, BLACK)
+            Instruction_text = basicFont.render('How to Play', True, WHITE, BLACK)
+            
+            Title_rect = Title_text.get_rect(center=(int(WINDOWWIDTH/2),int(WINDOWHEIGHT/5)))
+            play_textRect = play_text.get_rect(center=(int(WINDOWWIDTH/2),int(WINDOWHEIGHT/2)))
+            Instruction_rect = Instruction_text.get_rect(center = (int(WINDOWWIDTH/2), int(WINDOWHEIGHT/(5/3))))
 
             for name in BackgroundList:
                 BackgroundList[name] = pygame.transform.scale(OriginalBackgroundList[name], event.size)
@@ -97,7 +108,9 @@ while True:
             Green_rightcentre.midright = (WINDOWWIDTH, WINDOWHEIGHT/2)
 
             backbutton.size = (int(WINDOWWIDTH/6.25), int(WINDOWHEIGHT/7.5))
-            
+
+
+
         if event.type == MOUSEBUTTONUP:
             
             if current_screen == 'Start_Screen':
