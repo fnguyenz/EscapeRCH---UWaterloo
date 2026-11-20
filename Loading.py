@@ -90,6 +90,9 @@ for screen in MapListOriginal:
 MapNames= ['Outside 103 and 105', 'Classroom 105', 'Hallway 103', 'Hallway 105', 'Centre', 'Centre, 103 and 105', 'Centre, 110 and 112', 'Classroom 110', 'Classrooom 112', 'Outside 110 and 112', 'Hallway 110', 'Hallway 112']
 
 
+
+
+
 #Arrow Loading
 GreenRightPic = pygame.image.load('Images/GreenRightPic.png')  #0
 GreenLeftPic = pygame.image.load('Images/GreenLeftPic.png')    #1

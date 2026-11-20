@@ -1,6 +1,6 @@
 import pygame, sys
 from pygame.locals import *
-from Loading import *
+from ImageLoadingtest import *
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -10,12 +10,12 @@ WINDOWWIDTH = 1250
 WINDOWHEIGHT = 750
 
 windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), pygame.RESIZABLE)
-pygame.display.set_caption('Local Test9')
+pygame.display.set_caption('Local Test10')
 
 
 #Primary buttons
-Green_right = pygame.Rect(1150,200,100,100)
-Green_left = pygame.Rect(0,200,100,100)
+Green_right = pygame.Rect(1150,250,100,100)
+Green_left = pygame.Rect(0,250,100,100)
 Green_down = pygame.Rect(575,650,100,100)
 Green_up = pygame.Rect(575,0,100,100)
 
@@ -24,8 +24,6 @@ Green_left2 = pygame.Rect(0,500,100,100)
 Green_leftcentre = pygame.Rect(0, 325,100,100)
 Green_right2 = pygame.Rect(1150,500,100,100)
 Green_rightcentre = pygame.Rect(1150, 325,100,100)
-
-#Arrow Sprites
 
 
 #Colours
@@ -74,9 +72,32 @@ while True:
 
             for arrow in range(len(ArrowsOriginal)):
                 Arrows[arrow] = pygame.transform.scale(ArrowsOriginal[arrow], (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5)))
+            Green_right.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_right.midright = (WINDOWWIDTH, int(WINDOWHEIGHT/3))
 
+            Green_left.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_left.midleft = (0, WINDOWHEIGHT/3)
 
+            Green_down.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_down.midbottom = (WINDOWWIDTH/2, WINDOWHEIGHT)
 
+            Green_up.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_up.midtop = (WINDOWWIDTH/2, 0)
+
+            Green_left2.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_left2.midleft = (0, int(WINDOWHEIGHT/1.5))
+
+            Green_leftcentre.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_leftcentre.midleft = (0, WINDOWHEIGHT/2)
+
+            Green_right2.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_right2.midright = (WINDOWWIDTH, int(WINDOWHEIGHT/1.5))
+
+            Green_rightcentre.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+            Green_rightcentre.midright = (WINDOWWIDTH, WINDOWHEIGHT/2)
+
+            backbutton.size = (int(WINDOWWIDTH/6.25), int(WINDOWHEIGHT/7.5))
+            
         if event.type == MOUSEBUTTONUP:
             
             if current_screen == 'Start_Screen':
@@ -233,58 +254,58 @@ while True:
         
     elif current_screen == 'TiredKidClass':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenDownPic, Green_down)
+        windowSurface.blit(Arrows[2], Green_down)
         
     elif current_screen == '103Hallway':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenLeftPic, Green_leftcentre)
+        windowSurface.blit(Arrows[1], Green_leftcentre)
         
     elif current_screen == '105Hallway':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenRightPic, Green_rightcentre)
+        windowSurface.blit(Arrows[0], Green_rightcentre)
 
     elif current_screen == 'CentreRoom':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenLeftPic, Green_leftcentre)
-        windowSurface.blit(GreenRightPic, Green_rightcentre)
+        windowSurface.blit(Arrows[1], Green_leftcentre)
+        windowSurface.blit(Arrows[0], Green_rightcentre)
         
     elif current_screen == 'Centre1315':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenLeftPic, Green_leftcentre)
-        windowSurface.blit(GreenRightPic, Green_rightcentre)
-        windowSurface.blit(GreenUpPic, Green_up)
-        windowSurface.blit(GreenDownPic, Green_down)
+        windowSurface.blit(Arrows[1], Green_leftcentre)
+        windowSurface.blit(Arrows[0], Green_rightcentre)
+        windowSurface.blit(Arrows[3], Green_up)
+        windowSurface.blit(Arrows[2], Green_down)
         
     elif current_screen == 'Centre1012':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenLeftPic, Green_leftcentre)
-        windowSurface.blit(GreenRightPic, Green_rightcentre)
-        windowSurface.blit(GreenUpPic, Green_up)
-        windowSurface.blit(GreenDownPic, Green_down)
+        windowSurface.blit(Arrows[1], Green_leftcentre)
+        windowSurface.blit(Arrows[0], Green_rightcentre)
+        windowSurface.blit(Arrows[3], Green_up)
+        windowSurface.blit(Arrows[2], Green_down)
         
     elif current_screen == 'Outside110112':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenLeftPic, Green_left)
-        windowSurface.blit(GreenRightPic, Green_right)
-        windowSurface.blit(GreenUpPic, Green_up)
-        windowSurface.blit(GreenLeftPic, Green_left2)
-        windowSurface.blit(GreenRightPic, Green_right2)
+        windowSurface.blit(Arrows[1], Green_left)
+        windowSurface.blit(Arrows[0], Green_right)
+        windowSurface.blit(Arrows[3], Green_up)
+        windowSurface.blit(Arrows[1], Green_left2)
+        windowSurface.blit(Arrows[0], Green_right2)
         
     elif current_screen == 'Classroom110':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenDownPic, Green_down)
+        windowSurface.blit(Arrows[2], Green_down)
         
     elif current_screen == 'Classroom112':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenDownPic, Green_down)
+        windowSurface.blit(Arrows[2], Green_down)
 
     elif current_screen == 'Hallway110':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenLeftPic, Green_leftcentre)
+        windowSurface.blit(Arrows[1], Green_leftcentre)
         
     elif current_screen == 'Hallway112':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
-        windowSurface.blit(GreenRightPic, Green_rightcentre)
+        windowSurface.blit(Arrows[0], Green_rightcentre)
     
     if current_screen != 'Start_Screen' and current_screen != 'InstructionsPage' and current_screen != 'VitelliClass':
         windowSurface.blit(MapList[current_screen], (0, 0))
