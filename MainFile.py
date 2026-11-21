@@ -24,7 +24,10 @@ Green_left2 = pygame.Rect(0,500,100,100)
 Green_leftcentre = pygame.Rect(0, 325,100,100)
 Green_right2 = pygame.Rect(1150,500,100,100)
 Green_rightcentre = pygame.Rect(1150, 325,100,100)
-
+#Interaction Buttons
+SketchyGuyButton = pygame.Rect(700, 225, 150, 400)
+VendingMachineButton = pygame.Rect(0, 200, 250, 550)
+TiredKidButton = pygame.Rect(800, 400, 200, 100)
 
 #Colours
 BLACK = (0, 0, 0)
@@ -40,7 +43,7 @@ TitleFont = pygame.font.SysFont(None, 100)
 
 Title_text = TitleFont.render('Escape RCH', True, RED, BLACK)
 Title_rect = Title_text.get_rect(center=(WINDOWWIDTH/2,WINDOWHEIGHT/5))
-print(Title_rect.center)
+
 play_text = basicFont.render('Play', True, WHITE, BLACK) #creates text object
 play_textRect = play_text.get_rect(center=(WINDOWWIDTH/2,WINDOWHEIGHT/2))
 
@@ -49,6 +52,9 @@ Instruction_rect = Instruction_text.get_rect(center = (WINDOWWIDTH/2, (WINDOWHEI
 
 current_screen = 'Start_Screen'
 map = None
+Monster = False
+Money = False
+Keys = False
 
 while True:
     for event in pygame.event.get():
@@ -109,6 +115,15 @@ while True:
 
             backbutton.size = (int(WINDOWWIDTH/6.25), int(WINDOWHEIGHT/7.5))
 
+            SketchyGuyButton.size = (int(WINDOWWIDTH*0.12), int(WINDOWHEIGHT/1.875))
+            SketchyGuyButton.topleft = (int(WINDOWWIDTH*0.56), int(WINDOWHEIGHT*0.3))
+
+            VendingMachineButton.size = (int(WINDOWWIDTH/5), int(WINDOWHEIGHT/(750/550)))
+            VendingMachineButton.topleft = (0, int(WINDOWHEIGHT/3.75))
+
+            TiredKidButton.size = (int(WINDOWWIDTH*0.16), int(WINDOWHEIGHT/7.5))
+            TiredKidButton.topleft = (int(WINDOWWIDTH*0.64), int(WINDOWHEIGHT*0.5333))
+
 
 
         if event.type == MOUSEBUTTONUP:
@@ -150,11 +165,41 @@ while True:
                 if Green_down.collidepoint(event.pos):
                     current_screen = 'Outside103105'
                     map = 0
+                elif TiredKidButton.collidepoint(event.pos):
+                    current_screen = 'TiredKidSad'
+
+            elif current_screen == 'TiredKidSad':
+                if event.type == MOUSEBUTTONUP and event.button == 1:
+                    current_screen = 'TiredKidClass'
 
             elif current_screen == '103Hallway':
                 if Green_leftcentre.collidepoint(event.pos):
                     current_screen = 'Outside103105'
                     map = 0
+
+                elif Green_rightcentre.collidepoint(event.pos):
+                    current_screen = 'Elevator'
+
+                elif SketchyGuyButton.collidepoint(event.pos):
+                    current_screen = 'SketchyGuy'
+
+                elif VendingMachineButton.collidepoint(event.pos):
+                    current_screen = 'VendingMachine'
+        
+            elif current_screen == 'VendingMachine':
+                if Green_leftcentre.collidepoint(event.pos):
+                    current_screen = '103Hallway'
+                    map = 2
+
+            elif current_screen == 'Elevator':
+                if Green_leftcentre.collidepoint(event.pos):
+                    current_screen = '103Hallway'
+                    map = 2
+
+            elif current_screen == 'SketchyGuy':
+                if event.type == MOUSEBUTTONUP and event.button == 1:
+                    current_screen = '103Hallway'
+                    map = 2
 
             elif current_screen == '105Hallway':
                 if Green_rightcentre.collidepoint(event.pos):
@@ -268,11 +313,26 @@ while True:
     elif current_screen == 'TiredKidClass':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[2], Green_down)
-        
+
+    elif current_screen == 'TiredKidSad':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+
     elif current_screen == '103Hallway':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[1], Green_leftcentre)
-        
+        windowSurface.blit(Arrows[0], Green_rightcentre)
+
+    elif current_screen == 'Elevator':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+        windowSurface.blit(Arrows[1], Green_leftcentre)
+
+    elif current_screen == 'SketchyGuy':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+
+    elif current_screen == 'VendingMachine':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+        windowSurface.blit(Arrows[1], Green_leftcentre)
+
     elif current_screen == '105Hallway':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[0], Green_rightcentre)
