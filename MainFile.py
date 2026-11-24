@@ -1,6 +1,7 @@
 import pygame, sys
 from pygame.locals import *
-from ImageLoadingtest import *
+from Loading import *
+from Dialogue import *
 
 pygame.init()
 clock = pygame.time.Clock()
@@ -10,7 +11,7 @@ WINDOWWIDTH = 1250
 WINDOWHEIGHT = 750
 
 windowSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), pygame.RESIZABLE)
-pygame.display.set_caption('Escape RCH')
+pygame.display.set_caption('Local Test13')
 
 
 #Primary buttons
@@ -24,10 +25,19 @@ Green_left2 = pygame.Rect(0,500,100,100)
 Green_leftcentre = pygame.Rect(0, 325,100,100)
 Green_right2 = pygame.Rect(1150,500,100,100)
 Green_rightcentre = pygame.Rect(1150, 325,100,100)
+
+GreenButtons = [Green_right, Green_left, Green_down, Green_up, Green_left2, Green_leftcentre, Green_right2, Green_right2]
+
 #Interaction Buttons
 SketchyGuyButton = pygame.Rect(700, 225, 150, 400)
 VendingMachineButton = pygame.Rect(0, 200, 250, 550)
 TiredKidButton = pygame.Rect(800, 400, 200, 100)
+
+#Dialogue Buttons
+DialogueBox = pygame.Rect(475, 450, 600, 300)
+DialogueBox.midtop = (625,450)
+DiaL1 = pygame.Rect(425,550,200,100)
+DiaR1 = pygame.Rect(700,550,200,100)
 
 #Colours
 BLACK = (0, 0, 0)
@@ -52,9 +62,13 @@ Instruction_rect = Instruction_text.get_rect(center = (WINDOWWIDTH/2, (WINDOWHEI
 
 current_screen = 'Start_Screen'
 map = None
-Monster = False
+Monster = True
 Money = False
 Keys = False
+
+Dialogue = False
+TiredKid = False
+
 
 while True:
     for event in pygame.event.get():
@@ -89,28 +103,17 @@ while True:
 
             for arrow in range(len(ArrowsOriginal)):
                 Arrows[arrow] = pygame.transform.scale(ArrowsOriginal[arrow], (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5)))
-            Green_right.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
+
+            for GreenButton in range(len(GreenButtons)):
+                GreenButtons[GreenButton].size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_right.midright = (WINDOWWIDTH, int(WINDOWHEIGHT/3))
 
-            Green_left.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_left.midleft = (0, WINDOWHEIGHT/3)
-
-            Green_down.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_down.midbottom = (WINDOWWIDTH/2, WINDOWHEIGHT)
-
-            Green_up.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_up.midtop = (WINDOWWIDTH/2, 0)
-
-            Green_left2.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_left2.midleft = (0, int(WINDOWHEIGHT/1.5))
-
-            Green_leftcentre.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_leftcentre.midleft = (0, WINDOWHEIGHT/2)
-
-            Green_right2.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_right2.midright = (WINDOWWIDTH, int(WINDOWHEIGHT/1.5))
-
-            Green_rightcentre.size = (int(WINDOWWIDTH/12.5), int(WINDOWHEIGHT/7.5))
             Green_rightcentre.midright = (WINDOWWIDTH, WINDOWHEIGHT/2)
 
             backbutton.size = (int(WINDOWWIDTH/6.25), int(WINDOWHEIGHT/7.5))
@@ -167,9 +170,37 @@ while True:
                     map = 0
                 elif TiredKidButton.collidepoint(event.pos):
                     current_screen = 'TiredKidSad'
+                    D = 0
 
             elif current_screen == 'TiredKidSad':
-                if event.type == MOUSEBUTTONUP and event.button == 1:
+                if TiredKid == False:
+                    if DiaL1.collidepoint(event.pos) and D == 2:
+                        D = 3
+                    elif DialogueBox.collidepoint(event.pos) and D == 3:
+                            D = 2
+                    elif DiaR1.collidepoint(event.pos) and D == 2:
+                        D = 4
+
+                    elif DialogueBox.collidepoint(event.pos) and D != 2 and D != 3 and D!=6:
+                        D +=1
+
+                    elif (not DialogueBox.collidepoint(event.pos) and event.button == 1) or (DialogueBox.collidepoint(event.pos) and D == 6):
+                        if D == 6:
+                            TiredKid = True
+                        current_screen = 'TiredKidClass'
+                else:
+                    if DiaL1.collidepoint(event.pos) and D == 0 and Monster == True:
+                        D = 1
+                        current_screen = 'TiredKidHappy'
+                    elif DiaL1.collidepoint(event.pos) and D == 0 and Monster == False:
+                        D = 3
+                    elif DiaR1.collidepoint(event.pos) and D == 0:
+                        D = 2
+                    elif (not DialogueBox.collidepoint(event.pos)) or (DialogueBox.collidepoint(event.pos) and D!=0):
+                        current_screen = 'TiredKidClass'
+
+            elif current_screen == 'TiredKidHappy':
+                if (not DialogueBox.collidepoint(event.pos)) or (DialogueBox.collidepoint(event.pos) and D!=0):
                     current_screen = 'TiredKidClass'
 
             elif current_screen == '103Hallway':
@@ -316,6 +347,15 @@ while True:
 
     elif current_screen == 'TiredKidSad':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
+        pygame.draw.rect(windowSurface, GREEN, DiaL1)
+        if TiredKid == False:
+            windowSurface.blit(TiredKidDialogueAlt1[D], DialogueBox)
+        else:
+            windowSurface.blit(TiredKidDialogueAlt2[D], DialogueBox)
+
+    elif current_screen == 'TiredKidHappy':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+        windowSurface.blit(TiredKidDialogueAlt2[D], DialogueBox)
 
     elif current_screen == '103Hallway':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
