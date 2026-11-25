@@ -2,71 +2,71 @@ import pygame
 from pygame.locals import *
 
 #BackgroundLoading
-InstructionsPage = pygame.image.load('Images/InstructionsPage2.png')
+InstructionsPage = pygame.image.load('Images/Backgrounds/InstructionsPage2.png')
 InstructionsPageAlt = pygame.transform.scale(InstructionsPage, (1250,750)) #1
 backbutton = pygame.Rect(0,0,200,100)
 
-VitelliClass = pygame.image.load('Images/VitelliClass.jpg')
+VitelliClass = pygame.image.load('Images/Backgrounds/VitelliClass.jpg')
 VitelliClassAlt = pygame.transform.scale(VitelliClass, (1250,750))         #2
 
-Outside103105 = pygame.image.load('Images/Outside103105.jpg')
+Outside103105 = pygame.image.load('Images/Backgrounds/Outside103105.jpg')
 Outside103105Alt = pygame.transform.scale(Outside103105, (1250,750))      #3
 
-TiredKidClass = pygame.image.load('Images/TiredKidClass.jpg')
+TiredKidClass = pygame.image.load('Images/Backgrounds/TiredKidClass.jpg')
 TiredKidClassAlt = pygame.transform.scale(TiredKidClass, (1250,750))     #4
 
-Hallway103 = pygame.image.load('Images/103Hallway.jpg')
+Hallway103 = pygame.image.load('Images/Backgrounds/103Hallway.jpg')
 Hallway103Alt = pygame.transform.scale(Hallway103, (1250,750))           #5
 
-Hallway105 = pygame.image.load('Images/105Hallway.jpg')
+Hallway105 = pygame.image.load('Images/Backgrounds/105Hallway.jpg')
 Hallway105Alt = pygame.transform.scale(Hallway105, (1250,750))           #6
 
-CentreRoom = pygame.image.load('Images/CenterRoom.jpg')
+CentreRoom = pygame.image.load('Images/Backgrounds/CenterRoom.jpg')
 CentreRoomAlt = pygame.transform.scale(CentreRoom, (1250,750))          #7
 
-Centre1012 = pygame.image.load('Images/Centre1012.jpg')
+Centre1012 = pygame.image.load('Images/Backgrounds/Centre1012.jpg')
 Centre1012Alt = pygame.transform.scale(Centre1012, (1250,750))          #8
 
-Centre1315 = pygame.image.load('Images/Centre1315.jpg')
+Centre1315 = pygame.image.load('Images/Backgrounds/Centre1315.jpg')
 Centre1315Alt = pygame.transform.scale(Centre1315, (1250,750))          #9
 
-Outside110112 = pygame.image.load('Images/Outside-110-112.jpg')
+Outside110112 = pygame.image.load('Images/Backgrounds/Outside-110-112.jpg')
 Outside110112Alt = pygame.transform.scale(Outside110112, (1250,750))
 
-Classroom110_Ittisak = pygame.image.load('Images/Classroom110_Ittisak.png')
+Classroom110_Ittisak = pygame.image.load('Images/Backgrounds/Classroom110_Ittisak.png')
 Classroom110_IttisakAlt = pygame.transform.scale(Classroom110_Ittisak, (1250,750))
 
-Classroom110 = pygame.image.load('Images/Classroom110.jpg')
+Classroom110 = pygame.image.load('Images/Backgrounds/Classroom110.jpg')
 Classroom110Alt = pygame.transform.scale(Classroom110, (1250,750))
 
-Classroom112 = pygame.image.load('Images/Classroom112.jpg')
+Classroom112 = pygame.image.load('Images/Backgrounds/Classroom112.jpg')
 Classroom112Alt = pygame.transform.scale(Classroom112, (1250,750))
 
-Hallway110 = pygame.image.load('Images/110Hallway.jpg')
+Hallway110 = pygame.image.load('Images/Backgrounds/110Hallway.jpg')
 Hallway110Alt = pygame.transform.scale(Hallway110, (1250,750))
 
-Hallway112 = pygame.image.load('Images/112Hallway.png')
+Hallway112 = pygame.image.load('Images/Backgrounds/112Hallway.png')
 Hallway112Alt = pygame.transform.scale(Hallway112, (1250,750))
 
-Hallway112_BlockedAcid = pygame.image.load('Images/112Hallway_Blocked_Acid.png')
+Hallway112_BlockedAcid = pygame.image.load('Images/Backgrounds/112Hallway_Blocked_Acid.png')
 Hallway112_BlockedAcidAlt = pygame.transform.scale(Hallway112_BlockedAcid, (1250,750))
 
-Hallway112_Acid = pygame.image.load('Images/112Hallway_Acid.png')
+Hallway112_Acid = pygame.image.load('Images/Backgrounds/112Hallway_Acid.png')
 Hallway112_AcidAlt = pygame.transform.scale(Hallway112_Acid, (1250,750))
 
-Elevator = pygame.image.load('Images/Elevator.jpg')
+Elevator = pygame.image.load('Images/Backgrounds/Elevator.jpg')
 ElevatorAlt = pygame.transform.scale(Elevator, (1250,750))
 
-SketchyGuy = pygame.image.load('Images/SktechyGuy-Closeup.jpg')
+SketchyGuy = pygame.image.load('Images/Backgrounds/SktechyGuy-Closeup.jpg')
 SketchyGuyAlt = pygame.transform.scale(SketchyGuy, (1250,750))
 
-TiredKidSad = pygame.image.load('Images/TiredKid-Tired.jpg')
+TiredKidSad = pygame.image.load('Images/Backgrounds/TiredKid-Tired.jpg')
 TiredKidSadAlt = pygame.transform.scale(TiredKidSad, (1250,750))
 
-TiredKidHappy = pygame.image.load('Images/TiredKid-Happy.jpg')
+TiredKidHappy = pygame.image.load('Images/Backgrounds/TiredKid-Happy.jpg')
 TiredKidHappyAlt = pygame.transform.scale(TiredKidHappy, (1250,750))
 
-VendingMachine = pygame.image.load('Images/VendingMachine.jpg')
+VendingMachine = pygame.image.load('Images/Backgrounds/VendingMachine.jpg')
 VendingMachineAlt = pygame.transform.scale(VendingMachine, (1250,750))
 
 OriginalBackgroundList = {'InstructionsPage': InstructionsPage, 'VitelliClass': VitelliClass, 'Outside103105': Outside103105, 'TiredKidClass': TiredKidClass, '103Hallway': Hallway103, '105Hallway': Hallway105, 'CentreRoom': CentreRoom, 'Centre1012': Centre1012, 'Centre1315': Centre1315, 'Outside110112': Outside110112, 'Classroom110Ittisak': Classroom110_Ittisak, 'Classroom110': Classroom110, 'Classroom112': Classroom112, 'Hallway110': Hallway110, 'Hallway112': Hallway112, 'Hallway112BlockedAcid': Hallway112_BlockedAcid, 'Hallway112Acid': Hallway112_Acid, 'Elevator': Elevator, 'SketchyGuy': SketchyGuy, 'TiredKidSad': TiredKidSad, 'TiredKidHappy': TiredKidHappy, 'VendingMachine': VendingMachine}
@@ -118,10 +118,10 @@ MapNames= ['Outside 103 and 105', 'Classroom 105', 'Hallway 103', 'Hallway 105',
 
 
 #Arrow Loading
-GreenRightPic = pygame.image.load('Images/GreenRightPic.png')  #0
-GreenLeftPic = pygame.image.load('Images/GreenLeftPic.png')    #1
-GreenDownPic = pygame.image.load('Images/GreenDownPic.png')     #2
-GreenUpPic = pygame.image.load('Images/GreenUpPic.png')         #3
+GreenRightPic = pygame.image.load('Images/Sprites/GreenRightPic.png')  #0
+GreenLeftPic = pygame.image.load('Images/Sprites/GreenLeftPic.png')    #1
+GreenDownPic = pygame.image.load('Images/Sprites/GreenDownPic.png')     #2
+GreenUpPic = pygame.image.load('Images/Sprites/GreenUpPic.png')         #3
 
 ArrowsOriginal = [GreenRightPic, GreenLeftPic, GreenDownPic, GreenUpPic]
 Arrows = [GreenRightPic, GreenLeftPic, GreenDownPic, GreenUpPic]
