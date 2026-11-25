@@ -36,6 +36,7 @@ GreenButtons = [Green_right, Green_left, Green_down, Green_up, Green_left2, Gree
 SketchyGuyButton = pygame.Rect(700, 225, 150, 400)
 VendingMachineButton = pygame.Rect(0, 200, 250, 550)
 TiredKidButton = pygame.Rect(800, 400, 200, 100)
+IttisakButton = pygame.Rect(150, 275, 125, 400)
 
 #Dialogue Buttons
 DialogueBox = pygame.Rect(475, 450, 600, 300)
@@ -279,7 +280,14 @@ while True:
                 if Green_down.collidepoint((MouseX, MouseY)):
                     current_screen = 'Outside110112'
                     map = 9
-                  
+                elif IttisakButton.collidepoint((MouseX, MouseY)) and Blocked == True:
+                    current_screen = 'Ittisak'
+
+            elif current_screen == 'Ittisak':
+                if event.type == MOUSEBUTTONUP and event.button == 1:
+                    current_screen = 'Classroom110Ittisak'
+                    map = 7
+                    
             elif current_screen == 'Classroom112':
                 if Green_down.collidepoint((MouseX, MouseY)):
                     current_screen = 'Outside110112'
@@ -380,7 +388,10 @@ while True:
     elif current_screen == 'Classroom110' or current_screen == 'Classroom110Ittisak':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[2], Green_down)
-        
+
+    elif current_screen == 'Ittisak':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+
     elif current_screen == 'Classroom112':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[2], Green_down)
