@@ -15,7 +15,7 @@ OldWH = 750
 
 gameSurface = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT), pygame.RESIZABLE)
 windowSurface = pygame.Surface((1250, 750))
-pygame.display.set_caption('Local Test13')
+pygame.display.set_caption('MainFile')
 
 
 #Primary buttons
@@ -73,9 +73,10 @@ Monster = True
 Money = False
 Keys = False
 
-Dialogue = False
 TiredKid = False
 
+Blocked = True
+Acid = True
 
 while True:
     for event in pygame.event.get():
@@ -229,7 +230,12 @@ while True:
                     map = 10
                     
                 elif Green_rightcentre.collidepoint((MouseX, MouseY)): 
-                    current_screen = 'Hallway112' 
+                    if Blocked == True and Acid == True:
+                        current_screen = 'Hallway112BlockedAcid'
+                    elif Acid == True:
+                        current_screen = 'Hallway112Acid'
+                    else:
+                        current_screen = 'Hallway112' 
                     map = 11
 
                 elif Green_up.collidepoint((MouseX, MouseY)): 
@@ -246,7 +252,12 @@ while True:
                     map = 10
                 
                 elif Green_left.collidepoint((MouseX, MouseY)): 
-                    current_screen = 'Hallway112'
+                    if Blocked == True and Acid == True:
+                        current_screen = 'Hallway112BlockedAcid'
+                    elif Acid == True:
+                        current_screen = 'Hallway112Acid'
+                    else:
+                        current_screen = 'Hallway112' 
                     map = 11
                     
                 elif Green_up.collidepoint((MouseX, MouseY)):
@@ -254,14 +265,17 @@ while True:
                     map = 4
                     
                 elif Green_right2.collidepoint((MouseX, MouseY)):
-                    current_screen = 'Classroom110'
+                    if Blocked == True:
+                        current_screen = 'Classroom110Ittisak'
+                    else:
+                        current_screen = 'Classroom110'
                     map = 7
                 
                 elif Green_left2.collidepoint((MouseX, MouseY)): 
                     current_screen = 'Classroom112'
                     map = 8
 
-            elif current_screen == 'Classroom110':
+            elif current_screen == 'Classroom110' or current_screen == 'Classroom110Ittisak':
                 if Green_down.collidepoint((MouseX, MouseY)):
                     current_screen = 'Outside110112'
                     map = 9
@@ -276,7 +290,7 @@ while True:
                     current_screen = 'Outside110112'
                     map = 9
             
-            elif current_screen == 'Hallway112':
+            elif current_screen == 'Hallway112' or current_screen == 'Hallway112BlockedAcid' or current_screen == 'Hallway112Acid':
                 if Green_rightcentre.collidepoint((MouseX, MouseY)):
                     current_screen = 'Outside110112'
                     map = 9
@@ -363,7 +377,7 @@ while True:
         windowSurface.blit(Arrows[1], Green_left2)
         windowSurface.blit(Arrows[0], Green_right2)
         
-    elif current_screen == 'Classroom110':
+    elif current_screen == 'Classroom110' or current_screen == 'Classroom110Ittisak':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[2], Green_down)
         
@@ -375,7 +389,7 @@ while True:
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[1], Green_leftcentre)
         
-    elif current_screen == 'Hallway112':
+    elif current_screen == 'Hallway112' or current_screen == 'Hallway112BlockedAcid' or current_screen == 'Hallway112Acid':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[0], Green_rightcentre)
     
