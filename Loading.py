@@ -69,7 +69,7 @@ TiredKidHappyAlt = pygame.transform.scale(TiredKidHappy, (1250,750))
 VendingMachine = pygame.image.load('Images/Backgrounds/VendingMachine.jpg')
 VendingMachineAlt = pygame.transform.scale(VendingMachine, (1250,750))
 
-Ittisak = pygame.image.load('Images/Background/IttisakCloseUp.png')
+Ittisak = pygame.image.load('Images/Backgrounds/IttisakCloseUp.png')
 IttisakAlt = pygame.transform.scale(Ittisak, (1250,750))
                                     
 OriginalBackgroundList = {'InstructionsPage': InstructionsPage, 'VitelliClass': VitelliClass, 'Outside103105': Outside103105, 'TiredKidClass': TiredKidClass, '103Hallway': Hallway103, '105Hallway': Hallway105, 'CentreRoom': CentreRoom, 'Centre1012': Centre1012, 'Centre1315': Centre1315, 'Outside110112': Outside110112, 'Classroom110Ittisak': Classroom110_Ittisak, 'Classroom110': Classroom110, 'Classroom112': Classroom112, 'Hallway110': Hallway110, 'Hallway112': Hallway112, 'Hallway112BlockedAcid': Hallway112_BlockedAcid, 'Hallway112Acid': Hallway112_Acid, 'Elevator': Elevator, 'SketchyGuy': SketchyGuy, 'TiredKidSad': TiredKidSad, 'TiredKidHappy': TiredKidHappy, 'VendingMachine': VendingMachine, 'Ittisak': Ittisak}
