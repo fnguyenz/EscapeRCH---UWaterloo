@@ -13,9 +13,10 @@ TiredKidDiaQ2 = pygame.image.load('Images/Dialogue/TiredKid/TiredKidDiaQ2.png')
 TiredKidDia6 = pygame.image.load('Images/Dialogue/TiredKid/TiredKidDia6.png')
 TiredKidDia7 = pygame.image.load('Images/Dialogue/TiredKid/TiredKidDia7.png')
 TiredKidDia8 = pygame.image.load('Images/Dialogue/TiredKid/TiredKidDia8.png')
+#Pendar Dialogue!
+PendarDia1 = pygame.image.load('Images/Dialogue/BlockingPeeps/PendarDialogue1.png')
 
-
-TiredKidDialogue1 = [TiredKidDia1, TiredKidDia15, TiredKidDiaQ1, TiredKidDia3, TiredKidDia4, TiredKidDia45, TiredKidDia5]
+TiredKidDialogue1 = [TiredKidDia1, TiredKidDia15, TiredKidDiaQ1, TiredKidDia3, TiredKidDia4, TiredKidDia45, TiredKidDia5, PendarDia1]
 TiredKidDialogueAlt1 = []
 for image in TiredKidDialogue1:
     scaled_image = pygame.transform.scale(image, (600, 300))

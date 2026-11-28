@@ -78,6 +78,7 @@ TiredKid = False
 
 Blocked = True
 Acid = True
+Pendar = True
 
 while True:
     for event in pygame.event.get():
@@ -111,7 +112,10 @@ while True:
             
             elif current_screen == 'Outside103105':
                 if Green_up.collidepoint((MouseX, MouseY)):
-                    current_screen = 'CentreRoom'
+                    if Pendar == True:
+                        current_screen = 'CentreRoomPendar'
+                    else:
+                        current_screen = 'CentreRoom'
                     map = 4
 
                 elif Green_left.collidepoint((MouseX, MouseY)):
@@ -207,6 +211,10 @@ while True:
                 elif Green_rightcentre.collidepoint((MouseX, MouseY)):
                     current_screen = 'Centre1012'
                     map = 6
+
+            elif current_screen == 'CentreRoomPendar':
+                if event.type == MOUSEBUTTONUP and event.button == 1:
+                    current_screen = 'Outside103105'
 
             elif current_screen == 'Centre1315':
                 if Green_up.collidepoint((MouseX, MouseY)):
@@ -362,7 +370,11 @@ while True:
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[1], Green_leftcentre)
         windowSurface.blit(Arrows[0], Green_rightcentre)
-        
+
+    elif current_screen == 'CentreRoomPendar':
+        windowSurface.blit(BackgroundList[current_screen], (0,0))
+        windowSurface.blit(TiredKidDialogueAlt1[-1], DialogueButtonsAlt[0])
+
     elif current_screen == 'Centre1315':
         windowSurface.blit(BackgroundList[current_screen], (0,0))
         windowSurface.blit(Arrows[1], Green_leftcentre)

@@ -24,6 +24,9 @@ Hallway105Alt = pygame.transform.scale(Hallway105, (1250,750))           #6
 CentreRoom = pygame.image.load('Images/Backgrounds/CenterRoom.jpg')
 CentreRoomAlt = pygame.transform.scale(CentreRoom, (1250,750))          #7
 
+CentreRoomPendar = pygame.image.load('Images/CentreRoom-Pendar.png')
+CentreRoomPendarAlt = pygame.transform.scale(CentreRoomPendar, (1250,750))  
+
 Centre1012 = pygame.image.load('Images/Backgrounds/Centre1012.jpg')
 Centre1012Alt = pygame.transform.scale(Centre1012, (1250,750))          #8
 
@@ -72,8 +75,8 @@ VendingMachineAlt = pygame.transform.scale(VendingMachine, (1250,750))
 Ittisak = pygame.image.load('Images/Backgrounds/IttisakCloseUp.png')
 IttisakAlt = pygame.transform.scale(Ittisak, (1250,750))
                                     
-OriginalBackgroundList = {'InstructionsPage': InstructionsPage, 'VitelliClass': VitelliClass, 'Outside103105': Outside103105, 'TiredKidClass': TiredKidClass, '103Hallway': Hallway103, '105Hallway': Hallway105, 'CentreRoom': CentreRoom, 'Centre1012': Centre1012, 'Centre1315': Centre1315, 'Outside110112': Outside110112, 'Classroom110Ittisak': Classroom110_Ittisak, 'Classroom110': Classroom110, 'Classroom112': Classroom112, 'Hallway110': Hallway110, 'Hallway112': Hallway112, 'Hallway112BlockedAcid': Hallway112_BlockedAcid, 'Hallway112Acid': Hallway112_Acid, 'Elevator': Elevator, 'SketchyGuy': SketchyGuy, 'TiredKidSad': TiredKidSad, 'TiredKidHappy': TiredKidHappy, 'VendingMachine': VendingMachine, 'Ittisak': Ittisak}
-BackgroundList = {'InstructionsPage': InstructionsPageAlt, 'VitelliClass': VitelliClassAlt, 'Outside103105': Outside103105Alt, 'TiredKidClass': TiredKidClassAlt, '103Hallway': Hallway103Alt, '105Hallway': Hallway105Alt, 'CentreRoom': CentreRoomAlt, 'Centre1012': Centre1012Alt, 'Centre1315': Centre1315Alt, 'Outside110112': Outside110112Alt, 'Classroom110Ittisak': Classroom110_IttisakAlt, 'Classroom110': Classroom110Alt, 'Classroom112': Classroom112Alt, 'Hallway110': Hallway110Alt, 'Hallway112': Hallway112Alt, 'Hallway112BlockedAcid': Hallway112_BlockedAcidAlt, 'Hallway112Acid': Hallway112_AcidAlt, 'Elevator': ElevatorAlt, 'SketchyGuy': SketchyGuyAlt, 'TiredKidSad': TiredKidSadAlt, 'TiredKidHappy': TiredKidHappyAlt, 'VendingMachine': VendingMachineAlt, 'Ittisak': IttisakAlt}
+OriginalBackgroundList = {'InstructionsPage': InstructionsPage, 'VitelliClass': VitelliClass, 'Outside103105': Outside103105, 'TiredKidClass': TiredKidClass, '103Hallway': Hallway103, '105Hallway': Hallway105, 'CentreRoom': CentreRoom, 'CentreRoomPendar': CentreRoomPendar, 'Centre1012': Centre1012, 'Centre1315': Centre1315, 'Outside110112': Outside110112, 'Classroom110Ittisak': Classroom110_Ittisak, 'Classroom110': Classroom110, 'Classroom112': Classroom112, 'Hallway110': Hallway110, 'Hallway112': Hallway112, 'Hallway112BlockedAcid': Hallway112_BlockedAcid, 'Hallway112Acid': Hallway112_Acid, 'Elevator': Elevator, 'SketchyGuy': SketchyGuy, 'TiredKidSad': TiredKidSad, 'TiredKidHappy': TiredKidHappy, 'VendingMachine': VendingMachine, 'Ittisak': Ittisak}
+BackgroundList = {'InstructionsPage': InstructionsPageAlt, 'VitelliClass': VitelliClassAlt, 'Outside103105': Outside103105Alt, 'TiredKidClass': TiredKidClassAlt, '103Hallway': Hallway103Alt, '105Hallway': Hallway105Alt, 'CentreRoom': CentreRoomAlt, 'CentreRoomPendar': CentreRoomPendarAlt, 'Centre1012': Centre1012Alt, 'Centre1315': Centre1315Alt, 'Outside110112': Outside110112Alt, 'Classroom110Ittisak': Classroom110_IttisakAlt, 'Classroom110': Classroom110Alt, 'Classroom112': Classroom112Alt, 'Hallway110': Hallway110Alt, 'Hallway112': Hallway112Alt, 'Hallway112BlockedAcid': Hallway112_BlockedAcidAlt, 'Hallway112Acid': Hallway112_AcidAlt, 'Elevator': ElevatorAlt, 'SketchyGuy': SketchyGuyAlt, 'TiredKidSad': TiredKidSadAlt, 'TiredKidHappy': TiredKidHappyAlt, 'VendingMachine': VendingMachineAlt, 'Ittisak': IttisakAlt}
 
 
 
@@ -108,7 +111,7 @@ Hallway110Map = pygame.image.load('Images/maps/110hallwaymap.png')              
 
 Hallway112Map = pygame.image.load('Images/maps/112hallwaymap.png')                     #11
 
-MapListOriginal = {'Outside103105': Outside103105Map, 'TiredKidClass': TiredKidClassMap, '103Hallway': Hallway103Map, '105Hallway': Hallway105Map, 'CentreRoom': CentreMap, 'Centre1012': CentreMapUp, 'Centre1315': CentreMapDown, 'Classroom110': Classroom110Map, 'Classroom110Ittisak': Classroom110Map, 'Ittisak': Classroom110Map, 'Classroom112': Classroom112Map, 'Outside110112': Outside110112Map, 'Hallway110': Hallway110Map, 'Hallway112': Hallway112Map, 'Hallway112BlockedAcid': Hallway112Map, 'Hallway112Acid': Hallway112Map, 'Elevator': Hallway103Map, 'SketchyGuy': Hallway103Map, 'VendingMachine': Hallway103Map, 'TiredKidSad': TiredKidClassMap, 'TiredKidHappy': TiredKidClassMap}
+MapListOriginal = {'Outside103105': Outside103105Map, 'TiredKidClass': TiredKidClassMap, '103Hallway': Hallway103Map, '105Hallway': Hallway105Map, 'CentreRoom': CentreMap, 'CentreRoomPendar': CentreMap, 'Centre1012': CentreMapUp, 'Centre1315': CentreMapDown, 'Classroom110': Classroom110Map, 'Classroom110Ittisak': Classroom110Map, 'Ittisak': Classroom110Map, 'Classroom112': Classroom112Map, 'Outside110112': Outside110112Map, 'Hallway110': Hallway110Map, 'Hallway112': Hallway112Map, 'Hallway112BlockedAcid': Hallway112Map, 'Hallway112Acid': Hallway112Map, 'Elevator': Hallway103Map, 'SketchyGuy': Hallway103Map, 'VendingMachine': Hallway103Map, 'TiredKidSad': TiredKidClassMap, 'TiredKidHappy': TiredKidClassMap}
 
 MapList = {}
 for screen in MapListOriginal:
